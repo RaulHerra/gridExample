@@ -1,0 +1,120 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #0B0908;
+    color: white;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 900px 400px 1fr;
+    grid-template-rows:
+        50px
+        50px
+        60px
+        150px
+        30px
+        210px
+        70px
+        50px
+        350px
+        10em
+    ;
+    grid-template-areas: 
+    "header header header header"
+    "postHeader postHeader postHeader postHeader"
+    ". h1 h1 ."
+    ". main patreon ."
+    ". main . ."
+    ". main menu ."
+    ". main . ."
+    ". h2 h2 ."
+    ". section section ."
+    "footer footer footer footer"
+    ;
+    column-gap: 30px;
+}
+
+header{
+    grid-area: header;
+    background-color: #C82D2D;
+}
+.postHeader{
+    grid-area: postHeader;
+    background-color: #212121;
+}
+h1{
+    grid-area: h1;
+    background-color: #0B0908;
+}
+main{
+    grid-area: main;
+    background-color: #212121;
+}
+.patreon{
+    grid-area: patreon;
+    background-color: #212121;
+}
+.menu{
+    grid-area: menu;
+    background-color: #212121;
+}
+h2{
+    grid-area: h2;
+    background-color: #0B0908;
+}
+section{
+    grid-area: section;
+    background-color: #0B0908;
+    display: grid;
+    grid-template-columns: 270px 270px 270px;
+    grid-template-rows: 320px;
+    grid-gap: 20px;
+}
+footer{
+    grid-area: footer;
+    background-color: #212121;
+}
+
+.juego{
+    background-color: #212121;
+}
+
+@media (max-width: 480px) {
+    .container{
+        grid-template-columns: 1fr 300px 1fr;
+        grid-template-rows:
+            50px
+            50px
+            60px
+            150px
+            10px
+            30px
+            70px
+            50px
+            150px
+            10em
+        ;
+        grid-template-areas: 
+        "header header header"
+        "postHeader postHeader postHeader"
+        ". h1 ."
+        ". main ."
+        ". main ."
+        ". . ."
+        ". menu ."
+        ". h2 ."
+        ". section ."
+        "footer footer footer"
+        ;
+        column-gap: 0px;
+    }
+    section{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: 100px;
+    }
+    .patreon{
+        display: none;
+    }
+}
